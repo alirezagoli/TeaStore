@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-db
@@ -29,7 +29,7 @@ spec:
   selector:
     run: teastore-db
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-registry
@@ -63,7 +63,7 @@ spec:
   selector:
     run: teastore-registry
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-persistence
@@ -89,7 +89,7 @@ spec:
         - name: DB_PORT
           value: "3306"
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-auth
@@ -111,7 +111,7 @@ spec:
         - name: REGISTRY_HOST
           value: "teastore-registry"
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-image
@@ -133,7 +133,7 @@ spec:
         - name: REGISTRY_HOST
           value: "teastore-registry"
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-recommender
@@ -155,7 +155,7 @@ spec:
         - name: REGISTRY_HOST
           value: "teastore-registry"
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-webui
