@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: teastore-db
 spec:
+  selector:
+    matchLabels:
+      app: teastore
   template:
     metadata:
       labels:
@@ -34,6 +37,9 @@ kind: Deployment
 metadata:
   name: teastore-registry
 spec:
+  selector:
+    matchLabels:
+      app: teastore
   template:
     metadata:
       labels:
@@ -68,6 +74,9 @@ kind: Deployment
 metadata:
   name: teastore-persistence
 spec:
+  selector:
+    matchLabels:
+      app: teastore
   template:
     metadata:
       labels:
@@ -94,6 +103,9 @@ kind: Deployment
 metadata:
   name: teastore-auth
 spec:
+  selector:
+    matchLabels:
+      app: teastore
   template:
     metadata:
       labels:
@@ -116,6 +128,9 @@ kind: Deployment
 metadata:
   name: teastore-image
 spec:
+  selector:
+    matchLabels:
+      app: teastore
   template:
     metadata:
       labels:
@@ -138,6 +153,9 @@ kind: Deployment
 metadata:
   name: teastore-recommender
 spec:
+  selector:
+    matchLabels:
+      app: teastore
   template:
     metadata:
       labels:
@@ -160,6 +178,9 @@ kind: Deployment
 metadata:
   name: teastore-webui
 spec:
+  selector:
+    matchLabels:
+      app: teastore
   template:
     metadata:
       labels:
