@@ -21,11 +21,6 @@ spec:
         image: descartesresearch/teastore-db
         ports:
         - containerPort: 3306
-        resources:
-            requests:
-                cpu: "100m"
-            limits:
-                cpu: "100m"
 ---
 apiVersion: v1
 kind: Service
@@ -67,11 +62,6 @@ spec:
         env:
         - name: USE_POD_IP
           value: "true"
-        resources:
-            requests:
-                cpu: "100m"
-            limits:
-                cpu: "100m"
 ---
 apiVersion: v1
 kind: Service
