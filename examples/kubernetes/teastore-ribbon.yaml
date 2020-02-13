@@ -110,10 +110,10 @@ spec:
         - name: DB_PORT
           value: "3306"
         resources:
-            requests:
-                cpu: "250m"
-            limits:
-                cpu: "250m"
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "250m"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -144,10 +144,10 @@ spec:
         - name: REGISTRY_HOST
           value: "teastore-registry"
         resources:
-            requests:
-                cpu: "250m"
-            limits:
-                cpu: "250m"
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "250m"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -178,10 +178,10 @@ spec:
         - name: REGISTRY_HOST
           value: "teastore-registry"
         resources:
-            requests:
-                cpu: "250m"
-            limits:
-                cpu: "250m"
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "250m"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -212,10 +212,10 @@ spec:
         - name: REGISTRY_HOST
           value: "teastore-registry"
         resources:
-            requests:
-                cpu: "250m"
-            limits:
-                cpu: "250m"
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "250m"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -246,10 +246,10 @@ spec:
         - name: REGISTRY_HOST
           value: "teastore-registry"
         resources:
-            requests:
-                cpu: "250m"
-            limits:
-                cpu: "250m"
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "250m"
 ---
 apiVersion: v1
 kind: Service
