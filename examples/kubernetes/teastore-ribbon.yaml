@@ -111,9 +111,9 @@ spec:
           value: "3306"
         resources:
           requests:
-            cpu: "300m"
+            cpu: "1000m"
           limits:
-            cpu: "300m"
+            cpu: "1000m"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -145,9 +145,9 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "300m"
+            cpu: "1000m"
           limits:
-            cpu: "300m"
+            cpu: "1000m"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -179,9 +179,9 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "300m"
+            cpu: "1000m"
           limits:
-            cpu: "300m"
+            cpu: "1000m"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -213,9 +213,9 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "300m"
+            cpu: "1000m"
           limits:
-            cpu: "300m"
+            cpu: "1000m"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -247,9 +247,9 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "300m"
+            cpu: "1000m"
           limits:
-            cpu: "300m"
+            cpu: "1000m"
 ---
 apiVersion: v1
 kind: Service
