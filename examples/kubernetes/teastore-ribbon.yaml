@@ -56,10 +56,14 @@ spec:
     spec:
       containers:
       - name: teastore-registry
-        image: descartesresearch/teastore-registry
+        image: alirezagoli/teastore-registry
         ports:
         - containerPort: 8080
         env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
         - name: USE_POD_IP
           value: "true"
 ---
@@ -97,10 +101,14 @@ spec:
     spec:
       containers:
       - name: teastore-persistence
-        image: descartesresearch/teastore-persistence
+        image: alirezagoli/teastore-persistence
         ports:
         - containerPort: 8080
         env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
         - name: USE_POD_IP
           value: "true"
         - name: REGISTRY_HOST
@@ -135,10 +143,14 @@ spec:
     spec:
       containers:
       - name: teastore-auth
-        image: descartesresearch/teastore-auth
+        image: alirezagoli/teastore-auth
         ports:
         - containerPort: 8080
         env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
         - name: USE_POD_IP
           value: "true"
         - name: REGISTRY_HOST
@@ -169,10 +181,14 @@ spec:
     spec:
       containers:
       - name: teastore-image
-        image: descartesresearch/teastore-image
+        image: alirezagoli/teastore-image
         ports:
         - containerPort: 8080
         env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
         - name: USE_POD_IP
           value: "true"
         - name: REGISTRY_HOST
@@ -203,10 +219,14 @@ spec:
     spec:
       containers:
       - name: teastore-recommender
-        image: descartesresearch/teastore-recommender
+        image: alirezagoli/teastore-recommender
         ports:
         - containerPort: 8080
         env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
         - name: USE_POD_IP
           value: "true"
         - name: REGISTRY_HOST
@@ -237,10 +257,14 @@ spec:
     spec:
       containers:
       - name: teastore-webui
-        image: descartesresearch/teastore-webui
+        image: alirezagoli/teastore-webui
         ports:
         - containerPort: 8080
         env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP   
         - name: USE_POD_IP
           value: "true"
         - name: REGISTRY_HOST
