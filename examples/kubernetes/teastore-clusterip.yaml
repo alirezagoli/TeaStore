@@ -7,9 +7,9 @@ metadata:
     run: teastore-db
 spec:
 selector:
-    matchLabels:
-      app: teastore
-      run: teastore-db
+  matchLabels:
+    app: teastore
+    run: teastore-db
   template:
     metadata:
       labels:
