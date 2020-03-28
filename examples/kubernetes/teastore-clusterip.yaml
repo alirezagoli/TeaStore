@@ -1,8 +1,15 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-db
+  labels:
+    app: teastore
+    run: teastore-db
 spec:
+selector:
+    matchLabels:
+      app: teastore
+      run: teastore-db
   template:
     metadata:
       labels:
@@ -29,11 +36,18 @@ spec:
   selector:
     run: teastore-db
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-registry
+  labels:
+    app: teastore
+    run: teastore-registry
 spec:
+  selector:
+    matchLabels:
+      app: teastore
+      run: teastore-registry
   template:
     metadata:
       labels:
@@ -42,9 +56,14 @@ spec:
     spec:
       containers:
       - name: teastore-registry
-        image: descartesresearch/teastore-registry
+        image: alirezagoli/teastore-registry
         ports:
         - containerPort: 8080
+        env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
 ---
 apiVersion: v1
 kind: Service
@@ -60,11 +79,18 @@ spec:
   selector:
     run: teastore-registry
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-persistence
+  labels:
+    app: teastore
+    run: teastore-persistence
 spec:
+  selector:
+    matchLabels:
+      app: teastore
+      run: teastore-persistence
   template:
     metadata:
       labels:
@@ -73,10 +99,14 @@ spec:
     spec:
       containers:
       - name: teastore-persistence
-        image: descartesresearch/teastore-persistence
+        image: alirezagoli/teastore-persistence
         ports:
         - containerPort: 8080
         env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
         - name: HOST_NAME
           value: "teastore-persistence"
         - name: REGISTRY_HOST
@@ -100,11 +130,18 @@ spec:
   selector:
     run: teastore-persistence
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-auth
+  labels:
+    app: teastore
+    run: teastore-auth
 spec:
+  selector:
+    matchLabels:
+      app: teastore
+      run: teastore-auth
   template:
     metadata:
       labels:
@@ -113,10 +150,14 @@ spec:
     spec:
       containers:
       - name: teastore-auth
-        image: descartesresearch/teastore-auth
+        image: alirezagoli/teastore-auth
         ports:
         - containerPort: 8080
         env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
         - name: HOST_NAME
           value: "teastore-auth"
         - name: REGISTRY_HOST
@@ -136,11 +177,18 @@ spec:
   selector:
     run: teastore-auth
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-image
+  labels:
+    app: teastore
+    run: teastore-image
 spec:
+  selector:
+    matchLabels:
+      app: teastore
+      run: teastore-image
   template:
     metadata:
       labels:
@@ -149,10 +197,14 @@ spec:
     spec:
       containers:
       - name: teastore-image
-        image: descartesresearch/teastore-image
+        image: alirezagoli/teastore-image
         ports:
         - containerPort: 8080
         env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
         - name: HOST_NAME
           value: "teastore-image"
         - name: REGISTRY_HOST
@@ -172,11 +224,18 @@ spec:
   selector:
     run: teastore-image
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-recommender
+  labels:
+    app: teastore
+    run: teastore-recommender
 spec:
+  selector:
+    matchLabels:
+      app: teastore
+      run: teastore-recommender
   template:
     metadata:
       labels:
@@ -185,10 +244,14 @@ spec:
     spec:
       containers:
       - name: teastore-recommender
-        image: descartesresearch/teastore-recommender
+        image: alirezagoli/teastore-recommender
         ports:
         - containerPort: 8080
         env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
         - name: HOST_NAME
           value: "teastore-recommender"
         - name: REGISTRY_HOST
@@ -208,11 +271,18 @@ spec:
   selector:
     run: teastore-recommender
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-webui
+  labels:
+    app: teastore
+    run: teastore-webui
 spec:
+  selector:
+    matchLabels:
+      app: teastore
+      run: teastore-webui
   template:
     metadata:
       labels:
@@ -221,10 +291,14 @@ spec:
     spec:
       containers:
       - name: teastore-webui
-        image: descartesresearch/teastore-webui
+        image: alirezagoli/teastore-webui
         ports:
         - containerPort: 8080
         env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP 
         - name: HOST_NAME
           value: "teastore-webui"
         - name: REGISTRY_HOST
