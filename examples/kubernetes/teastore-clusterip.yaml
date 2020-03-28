@@ -6,10 +6,10 @@ metadata:
     app: teastore
     run: teastore-db
 spec:
-selector:
-  matchLabels:
-    app: teastore
-    run: teastore-db
+  selector:
+    matchLabels:
+      app: teastore
+      run: teastore-db
   template:
     metadata:
       labels:
