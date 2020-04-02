@@ -61,7 +61,7 @@ spec:
         - containerPort: 8080
         env:
         - name: DD_SERVICE_NAME
-        - value: alireza
+        - value: "alireza"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
