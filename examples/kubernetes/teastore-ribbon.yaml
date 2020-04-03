@@ -61,7 +61,7 @@ spec:
         - containerPort: 8080
         env:
         - name: DD_SERVICE_NAME
-          value: "alireza"
+          value: "teastore-registry"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
@@ -107,6 +107,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: DD_SERVICE_NAME
+          value: "teastore-persistence"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
@@ -149,6 +151,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: DD_SERVICE_NAME
+          value: "teastore-auth"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
@@ -187,6 +191,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: DD_SERVICE_NAME
+          value: "teastore-image"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
@@ -225,6 +231,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: DD_SERVICE_NAME
+          value: "teastore-recommender"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
@@ -263,6 +271,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: DD_SERVICE_NAME
+          value: "teastore-webui"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
