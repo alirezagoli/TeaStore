@@ -60,6 +60,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: DD_SERVICE_NAME
+          value: "teastore-registry"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
@@ -103,6 +105,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: DD_SERVICE_NAME
+          value: "teastore-persistence"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
@@ -115,6 +119,11 @@ spec:
           value: "teastore-db"
         - name: DB_PORT
           value: "3306"
+        resources:
+          requests:
+            cpu: "1000m"
+          limits:
+            cpu: "1000m"
 ---
 apiVersion: v1
 kind: Service
@@ -154,6 +163,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: DD_SERVICE_NAME
+          value: "teastore-auth"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
@@ -162,6 +173,10 @@ spec:
           value: "teastore-auth"
         - name: REGISTRY_HOST
           value: "teastore-registry"
+        requests:
+            cpu: "1000m"
+          limits:
+            cpu: "1000m"
 ---
 apiVersion: v1
 kind: Service
@@ -201,6 +216,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: DD_SERVICE_NAME
+          value: "teastore-image"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
@@ -209,6 +226,10 @@ spec:
           value: "teastore-image"
         - name: REGISTRY_HOST
           value: "teastore-registry"
+        requests:
+            cpu: "1000m"
+          limits:
+            cpu: "1000m"
 ---
 apiVersion: v1
 kind: Service
@@ -248,6 +269,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: DD_SERVICE_NAME
+          value: "teastore-recommender"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
@@ -256,6 +279,10 @@ spec:
           value: "teastore-recommender"
         - name: REGISTRY_HOST
           value: "teastore-registry"
+        requests:
+            cpu: "1000m"
+          limits:
+            cpu: "1000m"
 ---
 apiVersion: v1
 kind: Service
@@ -295,6 +322,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: DD_SERVICE_NAME
+          value: "teastore-webui"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
@@ -303,6 +332,10 @@ spec:
           value: "teastore-webui"
         - name: REGISTRY_HOST
           value: "teastore-registry"
+        requests:
+            cpu: "1000m"
+          limits:
+            cpu: "1000m"
 ---
 apiVersion: v1
 kind: Service
