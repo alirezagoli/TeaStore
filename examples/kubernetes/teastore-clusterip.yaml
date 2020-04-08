@@ -173,7 +173,8 @@ spec:
           value: "teastore-auth"
         - name: REGISTRY_HOST
           value: "teastore-registry"
-        requests:
+        resources:
+          requests:
             cpu: "1000m"
           limits:
             cpu: "1000m"
@@ -226,7 +227,8 @@ spec:
           value: "teastore-image"
         - name: REGISTRY_HOST
           value: "teastore-registry"
-        requests:
+        resources:
+          requests:
             cpu: "1000m"
           limits:
             cpu: "1000m"
@@ -279,7 +281,8 @@ spec:
           value: "teastore-recommender"
         - name: REGISTRY_HOST
           value: "teastore-registry"
-        requests:
+        resources:
+          requests:
             cpu: "1000m"
           limits:
             cpu: "1000m"
@@ -332,7 +335,8 @@ spec:
           value: "teastore-webui"
         - name: REGISTRY_HOST
           value: "teastore-registry"
-        requests:
+        resources:
+          requests:
             cpu: "1000m"
           limits:
             cpu: "1000m"
