@@ -284,10 +284,10 @@ spec:
         resources:
           requests:
             cpu: "1000m"
-            memory: "270Mi"
+            memory: "280Mi"
           limits:
             cpu: "1000m"
-            memory: "270Mi"
+            memory: "280Mi"
 ---
 apiVersion: v1
 kind: Service
