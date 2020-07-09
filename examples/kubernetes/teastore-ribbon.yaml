@@ -249,10 +249,10 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "100m"
+            cpu: "150m"
             memory: "512Mi"
           limits:
-            cpu: "100m"
+            cpu: "150m"
             memory: "512Mi"
 ---
 apiVersion: apps/v1
