@@ -247,13 +247,13 @@ spec:
           value: "true"
         - name: REGISTRY_HOST
           value: "teastore-registry"
-#         resources:
-#           requests:
-#             cpu: "100m"
-#             memory: "512Mi"
-#           limits:
-#             cpu: "100m"
-#             memory: "512Mi"
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "512Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
 ---
 apiVersion: apps/v1
 kind: Deployment
