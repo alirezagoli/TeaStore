@@ -316,7 +316,7 @@ spec:
         startupProbe:
           httpGet:
             port: 8080
-          failureThreshold: 90
+          failureThreshold: 300
           periodSeconds: 1
 ---
 apiVersion: v1
