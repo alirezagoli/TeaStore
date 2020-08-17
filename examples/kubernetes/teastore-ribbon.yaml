@@ -301,7 +301,7 @@ spec:
           httpGet:
             port: 8080
           initialDelaySeconds: 0
-          periodSeconds: 10
+          periodSeconds: 20
         
 #         livenessProbe:
 #           httpGet:
