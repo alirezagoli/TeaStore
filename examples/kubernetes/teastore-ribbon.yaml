@@ -134,14 +134,14 @@ spec:
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 10
-          periodSeconds: 3
+          periodSeconds: 2
         livenessProbe:
           httpGet:
             port: 8080
           initialDelaySeconds: 180
           timeoutSeconds: 10
           failureThreshold: 3
-          periodSeconds: 10  
+          periodSeconds: 10
         startupProbe:
           httpGet:
             port: 8080
@@ -195,14 +195,14 @@ spec:
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 10
-          periodSeconds: 3
+          periodSeconds: 2
         livenessProbe:
           httpGet:
             port: 8080
           initialDelaySeconds: 180
           timeoutSeconds: 10
           failureThreshold: 3
-          periodSeconds: 10  
+          periodSeconds: 10
         startupProbe:
           httpGet:
             port: 8080
@@ -256,14 +256,14 @@ spec:
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 10
-          periodSeconds: 3
+          periodSeconds: 2
         livenessProbe:
           httpGet:
             port: 8080
           initialDelaySeconds: 180
           timeoutSeconds: 10
           failureThreshold: 3
-          periodSeconds: 10  
+          periodSeconds: 10
         startupProbe:
           httpGet:
             port: 8080
@@ -317,14 +317,14 @@ spec:
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 10
-          periodSeconds: 3
+          periodSeconds: 2
         livenessProbe:
           httpGet:
             port: 8080
           initialDelaySeconds: 180
           timeoutSeconds: 10
           failureThreshold: 3
-          periodSeconds: 10  
+          periodSeconds: 10
         startupProbe:
           httpGet:
             port: 8080
@@ -377,14 +377,14 @@ spec:
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 10
-          periodSeconds: 3
+          periodSeconds: 2
         livenessProbe:
           httpGet:
             port: 8080
           initialDelaySeconds: 180
           timeoutSeconds: 10
           failureThreshold: 3
-          periodSeconds: 10  
+          periodSeconds: 10
         startupProbe:
           httpGet:
             port: 8080
