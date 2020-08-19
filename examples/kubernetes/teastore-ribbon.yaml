@@ -352,6 +352,7 @@ spec:
       containers:
       - name: teastore-webui
         image: alirezagoli/teastore-webui:new
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         env:
