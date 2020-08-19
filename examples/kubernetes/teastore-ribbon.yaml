@@ -141,7 +141,7 @@ spec:
           initialDelaySeconds: 180
           timeoutSeconds: 10
           failureThreshold: 3
-          periodSeconds: 10
+          periodSeconds: 5
         startupProbe:
           httpGet:
             port: 8080
@@ -202,7 +202,7 @@ spec:
           initialDelaySeconds: 180
           timeoutSeconds: 10
           failureThreshold: 3
-          periodSeconds: 10
+          periodSeconds: 5
         startupProbe:
           httpGet:
             port: 8080
@@ -263,7 +263,7 @@ spec:
           initialDelaySeconds: 180
           timeoutSeconds: 10
           failureThreshold: 3
-          periodSeconds: 10
+          periodSeconds: 5
         startupProbe:
           httpGet:
             port: 8080
@@ -324,7 +324,7 @@ spec:
           initialDelaySeconds: 180
           timeoutSeconds: 10
           failureThreshold: 3
-          periodSeconds: 10
+          periodSeconds: 5
         startupProbe:
           httpGet:
             port: 8080
@@ -384,7 +384,7 @@ spec:
           initialDelaySeconds: 180
           timeoutSeconds: 10
           failureThreshold: 3
-          periodSeconds: 10
+          periodSeconds: 5
         startupProbe:
           httpGet:
             port: 8080
