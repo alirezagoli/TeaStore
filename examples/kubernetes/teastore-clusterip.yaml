@@ -50,7 +50,7 @@ spec:
     spec:
       containers:
       - name: teastore-registry
-        image: alirezagoli/teastore-registry
+        image: alirezagoli/teastore-registry:new
         ports:
         - containerPort: 8080
         env:
@@ -92,7 +92,7 @@ spec:
     spec:
       containers:
       - name: teastore-persistence
-        image: alirezagoli/teastore-persistence
+        image: alirezagoli/teastore-persistence:new
         ports:
         - containerPort: 8080
         env:
@@ -113,8 +113,29 @@ spec:
         resources:
           requests:
             cpu: "1000m"
+            memory: "512Mi"
           limits:
             cpu: "1000m"
+            memory: "512Mi"
+        
+        readinessProbe:
+          httpGet:
+            port: 8080
+          initialDelaySeconds: 0
+          timeoutSeconds: 10
+          periodSeconds: 2
+        livenessProbe:
+          httpGet:
+            port: 8080
+          initialDelaySeconds: 180
+          timeoutSeconds: 10
+          failureThreshold: 3
+          periodSeconds: 5
+        startupProbe:
+          httpGet:
+            port: 8080
+          failureThreshold: 300
+          periodSeconds: 1
 ---
 apiVersion: v1
 kind: Service
@@ -147,7 +168,7 @@ spec:
     spec:
       containers:
       - name: teastore-auth
-        image: alirezagoli/teastore-auth
+        image: alirezagoli/teastore-auth:new
         ports:
         - containerPort: 8080
         env:
@@ -163,9 +184,30 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "1000m"
+            cpu: "500m"
+            memory: "512Mi"
           limits:
-            cpu: "1000m"
+            cpu: "500m"
+            memory: "512Mi"
+            
+        readinessProbe:
+          httpGet:
+            port: 8080
+          initialDelaySeconds: 0
+          timeoutSeconds: 10
+          periodSeconds: 2
+        livenessProbe:
+          httpGet:
+            port: 8080
+          initialDelaySeconds: 180
+          timeoutSeconds: 10
+          failureThreshold: 3
+          periodSeconds: 5
+        startupProbe:
+          httpGet:
+            port: 8080
+          failureThreshold: 300
+          periodSeconds: 1
 ---
 apiVersion: v1
 kind: Service
@@ -198,7 +240,7 @@ spec:
     spec:
       containers:
       - name: teastore-image
-        image: alirezagoli/teastore-image
+        image: alirezagoli/teastore-image:new
         ports:
         - containerPort: 8080
         env:
@@ -215,8 +257,29 @@ spec:
         resources:
           requests:
             cpu: "1000m"
+            memory: "1024Mi"
           limits:
             cpu: "1000m"
+            memory: "1024Mi"
+        
+        readinessProbe:
+          httpGet:
+            port: 8080
+          initialDelaySeconds: 0
+          timeoutSeconds: 10
+          periodSeconds: 2
+        livenessProbe:
+          httpGet:
+            port: 8080
+          initialDelaySeconds: 180
+          timeoutSeconds: 10
+          failureThreshold: 3
+          periodSeconds: 5
+        startupProbe:
+          httpGet:
+            port: 8080
+          failureThreshold: 300
+          periodSeconds: 1
 ---
 apiVersion: v1
 kind: Service
@@ -249,7 +312,7 @@ spec:
     spec:
       containers:
       - name: teastore-recommender
-        image: alirezagoli/teastore-recommender
+        image: alirezagoli/teastore-recommender:new
         ports:
         - containerPort: 8080
         env:
@@ -266,8 +329,29 @@ spec:
         resources:
           requests:
             cpu: "1000m"
+            memory: "1024Mi"
           limits:
             cpu: "1000m"
+            memory: "1024Mi"
+        
+        readinessProbe:
+          httpGet:
+            port: 8080
+          initialDelaySeconds: 0
+          timeoutSeconds: 10
+          periodSeconds: 2
+        livenessProbe:
+          httpGet:
+            port: 8080
+          initialDelaySeconds: 180
+          timeoutSeconds: 10
+          failureThreshold: 3
+          periodSeconds: 5
+        startupProbe:
+          httpGet:
+            port: 8080
+          failureThreshold: 300
+          periodSeconds: 1
 ---
 apiVersion: v1
 kind: Service
@@ -300,7 +384,7 @@ spec:
     spec:
       containers:
       - name: teastore-webui
-        image: alirezagoli/teastore-webui
+        image: alirezagoli/teastore-webui:new
         ports:
         - containerPort: 8080
         env:
@@ -317,8 +401,28 @@ spec:
         resources:
           requests:
             cpu: "1000m"
+            memory: "512Mi"
           limits:
             cpu: "1000m"
+            memory: "512Mi"
+        readinessProbe:
+          httpGet:
+            port: 8080
+          initialDelaySeconds: 0
+          timeoutSeconds: 10
+          periodSeconds: 2
+        livenessProbe:
+          httpGet:
+            port: 8080
+          initialDelaySeconds: 180
+          timeoutSeconds: 10
+          failureThreshold: 3
+          periodSeconds: 5
+        startupProbe:
+          httpGet:
+            port: 8080
+          failureThreshold: 300
+          periodSeconds: 1
 ---
 apiVersion: v1
 kind: Service
