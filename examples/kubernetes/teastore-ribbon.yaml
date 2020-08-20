@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
       - name: teastore-registry
-        image: alirezagoli/teastore-registry
+        image: alirezagoli/teastore-registry:new
         ports:
         - containerPort: 8080
         env:
@@ -103,7 +103,7 @@ spec:
     spec:
       containers:
       - name: teastore-persistence
-        image: alirezagoli/teastore-persistence
+        image: alirezagoli/teastore-persistence:new
         ports:
         - containerPort: 8080
         env:
@@ -168,7 +168,7 @@ spec:
     spec:
       containers:
       - name: teastore-auth
-        image: alirezagoli/teastore-auth
+        image: alirezagoli/teastore-auth:new
         ports:
         - containerPort: 8080
         env:
@@ -229,7 +229,7 @@ spec:
     spec:
       containers:
       - name: teastore-image
-        image: alirezagoli/teastore-image
+        image: alirezagoli/teastore-image:new
         ports:
         - containerPort: 8080
         env:
@@ -290,7 +290,7 @@ spec:
     spec:
       containers:
       - name: teastore-recommender
-        image: alirezagoli/teastore-recommender
+        image: alirezagoli/teastore-recommender:new
         ports:
         - containerPort: 8080
         env:
