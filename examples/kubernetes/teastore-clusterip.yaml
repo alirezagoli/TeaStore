@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-db
+  labels:
+    app: teastore
+    run: teastore-db
 spec:
   selector:
     matchLabels:
@@ -37,6 +40,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-registry
+  labels:
+    app: teastore
+    run: teastore-registry
 spec:
   selector:
     matchLabels:
@@ -79,6 +85,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-persistence
+  labels:
+    app: teastore
+    run: teastore-persistence
 spec:
   selector:
     matchLabels:
@@ -155,6 +164,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-auth
+  labels:
+    app: teastore
+    run: teastore-auth
 spec:
   selector:
     matchLabels:
@@ -227,6 +239,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-image
+  labels:
+    app: teastore
+    run: teastore-image
 spec:
   selector:
     matchLabels:
@@ -299,6 +314,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-recommender
+  labels:
+    app: teastore
+    run: teastore-recommender
 spec:
   selector:
     matchLabels:
@@ -371,6 +389,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-webui
+  labels:
+    app: teastore
+    run: teastore-webui
 spec:
   selector:
     matchLabels:
