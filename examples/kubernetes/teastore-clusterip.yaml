@@ -119,13 +119,13 @@ spec:
           value: "teastore-db"
         - name: DB_PORT
           value: "3306"
-#         resources:
-#           requests:
-#             cpu: "1000m"
-#             memory: "512Mi"
-#           limits:
-#             cpu: "1000m"
-#             memory: "512Mi"
+        resources:
+          requests:
+            cpu: "1000m"
+            memory: "1024Mi"
+          limits:
+            cpu: "1000m"
+            memory: "1024Mi"
         
         readinessProbe:
           httpGet:
@@ -194,13 +194,13 @@ spec:
           value: "teastore-auth"
         - name: REGISTRY_HOST
           value: "teastore-registry"
-#         resources:
-#           requests:
-#             cpu: "500m"
-#             memory: "512Mi"
-#           limits:
-#             cpu: "500m"
-#             memory: "512Mi"
+        resources:
+          requests:
+            cpu: "1000m"
+            memory: "1024Mi"
+          limits:
+            cpu: "1000m"
+            memory: "1024Mi"
             
         readinessProbe:
           httpGet:
@@ -269,13 +269,13 @@ spec:
           value: "teastore-image"
         - name: REGISTRY_HOST
           value: "teastore-registry"
-#         resources:
-#           requests:
-#             cpu: "1000m"
-#             memory: "1024Mi"
-#           limits:
-#             cpu: "1000m"
-#             memory: "1024Mi"
+        resources:
+          requests:
+            cpu: "1000m"
+            memory: "1024Mi"
+          limits:
+            cpu: "1000m"
+            memory: "1024Mi"
         
         readinessProbe:
           httpGet:
@@ -344,13 +344,13 @@ spec:
           value: "teastore-recommender"
         - name: REGISTRY_HOST
           value: "teastore-registry"
-#         resources:
-#           requests:
-#             cpu: "1000m"
-#             memory: "1024Mi"
-#           limits:
-#             cpu: "1000m"
-#             memory: "1024Mi"
+        resources:
+          requests:
+            cpu: "1000m"
+            memory: "1024Mi"
+          limits:
+            cpu: "1000m"
+            memory: "1024Mi"
         
         readinessProbe:
           httpGet:
@@ -419,13 +419,13 @@ spec:
           value: "teastore-webui"
         - name: REGISTRY_HOST
           value: "teastore-registry"
-#         resources:
-#           requests:
-#             cpu: "1000m"
-#             memory: "512Mi"
-#           limits:
-#             cpu: "1000m"
-#             memory: "512Mi"
+        resources:
+          requests:
+            cpu: "1000m"
+            memory: "1024Mi"
+          limits:
+            cpu: "1000m"
+            memory: "1024Mi"
         readinessProbe:
           httpGet:
             port: 8080
