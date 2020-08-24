@@ -431,20 +431,20 @@ spec:
             cpu: "900m"
             memory: "2048Mi"
         
-        readinessProbe:
-          httpGet:
-            port: 8080
-          initialDelaySeconds: 0
-          timeoutSeconds: 30
-          failureThreshold: 3
-          periodSeconds: 10
-        livenessProbe:
-          httpGet:
-            port: 8080
-          initialDelaySeconds: 0
-          timeoutSeconds: 30
-          failureThreshold: 3
-          periodSeconds: 10
+#         readinessProbe:
+#           httpGet:
+#             port: 8080
+#           initialDelaySeconds: 0
+#           timeoutSeconds: 30
+#           failureThreshold: 3
+#           periodSeconds: 10
+#         livenessProbe:
+#           httpGet:
+#             port: 8080
+#           initialDelaySeconds: 0
+#           timeoutSeconds: 30
+#           failureThreshold: 3
+#           periodSeconds: 10
         startupProbe:
           httpGet:
             port: 8080
