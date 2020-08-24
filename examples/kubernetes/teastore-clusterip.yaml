@@ -447,7 +447,7 @@ spec:
 #           periodSeconds: 10
         startupProbe:
           httpGet:
-            port: 8080
+            port: 8086
           failureThreshold: 300
           periodSeconds: 1
 ---
