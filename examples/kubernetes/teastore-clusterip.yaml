@@ -129,7 +129,7 @@ spec:
         
         readinessProbe:
           httpGet:
-            path: /tools.descartes.teastore.persistence/rest/generatedb/finished
+            #path: /tools.descartes.teastore.persistence/rest/generatedb/finished
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 10
