@@ -132,7 +132,7 @@ spec:
             path: /tools.descartes.teastore.persistence/rest/generatedb/finished
             port: 8080
           initialDelaySeconds: 0
-          timeoutSeconds: 1
+          timeoutSeconds: 10
           failureThreshold: 900
           periodSeconds: 1
 #         livenessProbe:
@@ -208,7 +208,7 @@ spec:
           httpGet:
             port: 8080
           initialDelaySeconds: 0
-          timeoutSeconds: 1
+          timeoutSeconds: 10
           failureThreshold: 900
           periodSeconds: 1
 #         livenessProbe:
@@ -285,7 +285,7 @@ spec:
             path: /tools.descartes.teastore.image/rest/image/finished
             port: 8080
           initialDelaySeconds: 0
-          timeoutSeconds: 1
+          timeoutSeconds: 10
           failureThreshold: 900
           periodSeconds: 1
 #         livenessProbe:
@@ -362,7 +362,7 @@ spec:
             path: /tools.descartes.teastore.recommender/rest/train/isready
             port: 8080
           initialDelaySeconds: 0
-          timeoutSeconds: 1
+          timeoutSeconds: 10
           failureThreshold: 900
           periodSeconds: 1
 #         livenessProbe:
@@ -440,7 +440,7 @@ spec:
           httpGet:
             port: 8080
           initialDelaySeconds: 0
-          timeoutSeconds: 1
+          timeoutSeconds: 10
           failureThreshold: 900
           periodSeconds: 1
 #         livenessProbe:
