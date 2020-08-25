@@ -132,7 +132,7 @@ spec:
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 1
-          failureThreshold: 300
+          failureThreshold: 900
           periodSeconds: 1
 #         livenessProbe:
 #           httpGet:
@@ -208,7 +208,7 @@ spec:
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 1
-          failureThreshold: 300
+          failureThreshold: 900
           periodSeconds: 1
 #         livenessProbe:
 #           httpGet:
@@ -284,7 +284,7 @@ spec:
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 1
-          failureThreshold: 300
+          failureThreshold: 900
           periodSeconds: 1
 #         livenessProbe:
 #           httpGet:
@@ -360,7 +360,7 @@ spec:
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 1
-          failureThreshold: 300
+          failureThreshold: 900
           periodSeconds: 1
 #         livenessProbe:
 #           httpGet:
@@ -436,7 +436,7 @@ spec:
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 1
-          failureThreshold: 300
+          failureThreshold: 900
           periodSeconds: 1
 #         livenessProbe:
 #           httpGet:
