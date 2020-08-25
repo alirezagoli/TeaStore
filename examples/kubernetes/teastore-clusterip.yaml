@@ -424,6 +424,8 @@ spec:
           value: "teastore-webui"
         - name: REGISTRY_HOST
           value: "teastore-registry"
+        - name: RECOMMENDER_ALGORITHM
+          value: "Popularity"
         resources:
           requests:
             cpu: "900m"
