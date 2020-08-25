@@ -357,6 +357,7 @@ spec:
         
         readinessProbe:
           httpGet:
+            path: /tools.descartes.teastore.recommender/rest/train/isready
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 1
