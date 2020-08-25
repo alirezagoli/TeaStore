@@ -60,10 +60,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
-#         - name: DD_SERVICE_NAME
-#           value: "teastore-registry"
-        - name: USE_POD_IP
-          value: "true"
+        - name: DD_SERVICE_NAME
+          value: "teastore-registry"
         - name: DD_AGENT_HOST
           valueFrom:
             fieldRef:
@@ -113,10 +111,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: status.hostIP
-#         - name: HOST_NAME
-#           value: "teastore-persistence"
-        - name: USE_POD_IP
-          value: "true"
+        - name: HOST_NAME
+          value: "teastore-persistence"
         - name: REGISTRY_HOST
           value: "teastore-registry"
         - name: DB_HOST
@@ -196,10 +192,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: status.hostIP
-#         - name: HOST_NAME
-#           value: "teastore-auth"
-        - name: USE_POD_IP
-          value: "true"
+        - name: HOST_NAME
+          value: "teastore-auth"
         - name: REGISTRY_HOST
           value: "teastore-registry"
 #         resources:
@@ -274,10 +268,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: status.hostIP
-#         - name: HOST_NAME
-#           value: "teastore-image"
-        - name: USE_POD_IP
-          value: "true"
+        - name: HOST_NAME
+          value: "teastore-image"
         - name: REGISTRY_HOST
           value: "teastore-registry"
 #         resources:
@@ -353,10 +345,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: status.hostIP
-#         - name: HOST_NAME
-#           value: "teastore-recommender"
-        - name: USE_POD_IP
-          value: "true"
+        - name: HOST_NAME
+          value: "teastore-recommender"
         - name: REGISTRY_HOST
           value: "teastore-registry"
 #         resources:
@@ -432,10 +422,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: status.hostIP 
-#         - name: HOST_NAME
-#           value: "teastore-webui"
-        - name: USE_POD_IP
-          value: "true"
+        - name: HOST_NAME
+          value: "teastore-webui"
         - name: REGISTRY_HOST
           value: "teastore-registry"
 #         resources:
