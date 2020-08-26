@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
       - name: teastore-registry
-        image: alirezagoli/teastore-registry:latest
+        image: alirezagoli/teastore-registry:new
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -104,7 +104,7 @@ spec:
     spec:
       containers:
       - name: teastore-persistence
-        image: alirezagoli/teastore-persistence:latest
+        image: alirezagoli/teastore-persistence:new
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -172,7 +172,7 @@ spec:
     spec:
       containers:
       - name: teastore-auth
-        image: alirezagoli/teastore-auth:latest
+        image: alirezagoli/teastore-auth:new
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -235,7 +235,7 @@ spec:
     spec:
       containers:
       - name: teastore-image
-        image: alirezagoli/teastore-image:latest
+        image: alirezagoli/teastore-image:new
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -299,7 +299,7 @@ spec:
     spec:
       containers:
       - name: teastore-recommender
-        image: alirezagoli/teastore-recommender:latest
+        image: alirezagoli/teastore-recommender:new
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -363,7 +363,7 @@ spec:
     spec:
       containers:
       - name: teastore-webui
-        image: alirezagoli/teastore-webui:latest
+        image: alirezagoli/teastore-webui:new
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
