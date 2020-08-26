@@ -131,14 +131,14 @@ spec:
             cpu: "1000m"
             memory: "2048Mi"
         
-#         readinessProbe:
-#           httpGet:
-#             path: /tools.descartes.teastore.persistence/rest/generatedb/finished
-#             port: 8080
-#           initialDelaySeconds: 0
-#           timeoutSeconds: 10
-#           failureThreshold: 900
-#           periodSeconds: 1
+        readinessProbe:
+          httpGet:
+            path: /tools.descartes.teastore.persistence/rest/generatedb/finished
+            port: 8080
+          initialDelaySeconds: 0
+          timeoutSeconds: 10
+          failureThreshold: 900
+          periodSeconds: 1
 #         livenessProbe:
 #           httpGet:
 #             port: 8080
@@ -195,13 +195,13 @@ spec:
             cpu: "600m"
             memory: "2048Mi"
             
-#         readinessProbe:
-#           httpGet:
-#             port: 8080
-#           initialDelaySeconds: 0
-#           timeoutSeconds: 10
-#           failureThreshold: 900
-#           periodSeconds: 1
+        readinessProbe:
+          httpGet:
+            port: 8080
+          initialDelaySeconds: 0
+          timeoutSeconds: 10
+          failureThreshold: 900
+          periodSeconds: 1
 #         livenessProbe:
 #           httpGet:
 #             port: 8080
@@ -258,14 +258,14 @@ spec:
             cpu: "700m"
             memory: "2048Mi"
         
-#         readinessProbe:
-#           httpGet:
-#             path: /tools.descartes.teastore.image/rest/image/finished
-#             port: 8080
-#           initialDelaySeconds: 0
-#           timeoutSeconds: 10
-#           failureThreshold: 900
-#           periodSeconds: 1
+        readinessProbe:
+          httpGet:
+            path: /tools.descartes.teastore.image/rest/image/finished
+            port: 8080
+          initialDelaySeconds: 0
+          timeoutSeconds: 10
+          failureThreshold: 900
+          periodSeconds: 1
 #         livenessProbe:
 #           httpGet:
 #             port: 8080
@@ -322,14 +322,14 @@ spec:
             cpu: "800m"
             memory: "2048Mi"
         
-#         readinessProbe:
-#           httpGet:
-#             path: /tools.descartes.teastore.recommender/rest/train/isready
-#             port: 8080
-#           initialDelaySeconds: 0
-#           timeoutSeconds: 10
-#           failureThreshold: 900
-#           periodSeconds: 1
+        readinessProbe:
+          httpGet:
+            path: /tools.descartes.teastore.recommender/rest/train/isready
+            port: 8080
+          initialDelaySeconds: 0
+          timeoutSeconds: 10
+          failureThreshold: 900
+          periodSeconds: 1
 #         livenessProbe:
 #           httpGet:
 #             port: 8080
@@ -386,13 +386,13 @@ spec:
             cpu: "800m"
             memory: "2048Mi"
         
-#         readinessProbe:
-#           httpGet:
-#             port: 8080
-#           initialDelaySeconds: 0
-#           timeoutSeconds: 10
-#           failureThreshold: 900
-#           periodSeconds: 1
+        readinessProbe:
+          httpGet:
+            port: 8080
+          initialDelaySeconds: 0
+          timeoutSeconds: 10
+          failureThreshold: 900
+          periodSeconds: 1
 #         livenessProbe:
 #           httpGet:
 #             port: 8080
