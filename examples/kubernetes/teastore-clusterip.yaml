@@ -286,7 +286,7 @@ spec:
         
         readinessProbe:
           httpGet:
-            path: /tools.descartes.teastore.image/rest/image/finished
+            #path: /tools.descartes.teastore.image/rest/image/finished
             port: 8080
           initialDelaySeconds: 0
           timeoutSeconds: 10
