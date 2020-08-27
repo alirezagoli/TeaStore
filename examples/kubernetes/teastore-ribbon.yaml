@@ -389,6 +389,7 @@ spec:
         readinessProbe:
           httpGet:
             port: 8080
+            path: /tools.descartes.teastore.webui/
           initialDelaySeconds: 0
           timeoutSeconds: 10
           failureThreshold: 900
