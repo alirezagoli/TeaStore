@@ -272,7 +272,7 @@ spec:
           timeoutSeconds: 30
           failureThreshold: 3
           periodSeconds: 10
-       startupProbe:
+        startupProbe:
           httpGet:
             path: /tools.descartes.teastore.image/rest/image/finished
             port: 8080
