@@ -135,20 +135,21 @@ spec:
           httpGet:
             path: /tools.descartes.teastore.persistence/rest/generatedb/finished
             port: 8080
-          initialDelaySeconds: 0
-          timeoutSeconds: 10
-          failureThreshold: 900
-          periodSeconds: 1
-#         livenessProbe:
-#           httpGet:
-#             port: 8080
-#           initialDelaySeconds: 120
-#           timeoutSeconds: 30
-#           failureThreshold: 3
-#           periodSeconds: 5
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /tools.descartes.teastore.persistence/rest/generatedb/finished
+            port: 8080
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
         startupProbe:
           httpGet:
+            path: /tools.descartes.teastore.persistence/rest/generatedb/finished
             port: 8080
+          timeoutSeconds: 3
           failureThreshold: 300
           periodSeconds: 1
 ---
@@ -198,20 +199,19 @@ spec:
         readinessProbe:
           httpGet:
             port: 8080
-          initialDelaySeconds: 0
-          timeoutSeconds: 10
-          failureThreshold: 900
-          periodSeconds: 1
-#         livenessProbe:
-#           httpGet:
-#             port: 8080
-#           initialDelaySeconds: 120
-#           timeoutSeconds: 30
-#           failureThreshold: 3
-#           periodSeconds: 5
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            port: 8080
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
         startupProbe:
           httpGet:
             port: 8080
+          timeoutSeconds: 3
           failureThreshold: 300
           periodSeconds: 1
 ---
@@ -262,20 +262,21 @@ spec:
           httpGet:
             path: /tools.descartes.teastore.image/rest/image/finished
             port: 8080
-          initialDelaySeconds: 0
-          timeoutSeconds: 10
-          failureThreshold: 900
-          periodSeconds: 1
-#         livenessProbe:
-#           httpGet:
-#             port: 8080
-#           initialDelaySeconds: 120
-#           timeoutSeconds: 30
-#           failureThreshold: 3
-#           periodSeconds: 5
-        startupProbe:
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        livenessProbe:
           httpGet:
+            path: /tools.descartes.teastore.image/rest/image/finished
             port: 8080
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+       startupProbe:
+          httpGet:
+            path: /tools.descartes.teastore.image/rest/image/finished
+            port: 8080
+          timeoutSeconds: 3
           failureThreshold: 300
           periodSeconds: 1
 ---
@@ -326,20 +327,21 @@ spec:
           httpGet:
             path: /tools.descartes.teastore.recommender/rest/train/isready
             port: 8080
-          initialDelaySeconds: 0
-          timeoutSeconds: 10
-          failureThreshold: 900
-          periodSeconds: 1
-#         livenessProbe:
-#           httpGet:
-#             port: 8080
-#           initialDelaySeconds: 120
-#           timeoutSeconds: 30
-#           failureThreshold: 3
-#           periodSeconds: 5
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /tools.descartes.teastore.recommender/rest/train/isready
+            port: 8080
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
         startupProbe:
           httpGet:
+            path: /tools.descartes.teastore.recommender/rest/train/isready
             port: 8080
+          timeoutSeconds: 3
           failureThreshold: 300
           periodSeconds: 1
 ---
@@ -390,20 +392,21 @@ spec:
           httpGet:
             port: 8080
             path: /tools.descartes.teastore.webui/
-          initialDelaySeconds: 0
-          timeoutSeconds: 10
-          failureThreshold: 900
-          periodSeconds: 1
-#         livenessProbe:
-#           httpGet:
-#             port: 8080
-#           initialDelaySeconds: 120
-#           timeoutSeconds: 30
-#           failureThreshold: 3
-#           periodSeconds: 5
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /tools.descartes.teastore.webui/
+            port: 8080
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
         startupProbe:
           httpGet:
+            path: /tools.descartes.teastore.webui/
             port: 8080
+          timeoutSeconds: 3
           failureThreshold: 300
           periodSeconds: 1
 ---
