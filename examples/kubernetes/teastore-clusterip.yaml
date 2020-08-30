@@ -129,24 +129,25 @@ spec:
         
         readinessProbe:
           httpGet:
-            #path: /tools.descartes.teastore.persistence/rest/generatedb/finished
+            path: /tools.descartes.teastore.persistence/rest/generatedb/finished
             port: 8080
-          initialDelaySeconds: 0
-          timeoutSeconds: 10
-          failureThreshold: 900
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /tools.descartes.teastore.persistence/rest/generatedb/finished
+            port: 8080
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        startupProbe:
+          httpGet:
+            path: /tools.descartes.teastore.persistence/rest/generatedb/finished
+            port: 8080
+          timeoutSeconds: 3
+          failureThreshold: 300
           periodSeconds: 1
-#         livenessProbe:
-#           httpGet:
-#             port: 8080
-#           initialDelaySeconds: 120
-#           timeoutSeconds: 30
-#           failureThreshold: 3
-#           periodSeconds: 5
-#         startupProbe:
-#           httpGet:
-#             port: 8080
-#           failureThreshold: 300
-#           periodSeconds: 1
 ---
 apiVersion: v1
 kind: Service
@@ -198,31 +199,30 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "600m"
+            cpu: "500m"
             memory: "2048Mi"
           limits:
-            cpu: "600m"
+            cpu: "500m"
             memory: "2048Mi"
             
         readinessProbe:
           httpGet:
             port: 8080
-          initialDelaySeconds: 0
-          timeoutSeconds: 10
-          failureThreshold: 900
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            port: 8080
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        startupProbe:
+          httpGet:
+            port: 8080
+          timeoutSeconds: 3
+          failureThreshold: 300
           periodSeconds: 1
-#         livenessProbe:
-#           httpGet:
-#             port: 8080
-#           initialDelaySeconds: 120
-#           timeoutSeconds: 30
-#           failureThreshold: 3
-#           periodSeconds: 5
-#         startupProbe:
-#           httpGet:
-#             port: 8080
-#           failureThreshold: 300
-#           periodSeconds: 1
 ---
 apiVersion: v1
 kind: Service
@@ -274,32 +274,33 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "700m"
+            cpu: "500m"
             memory: "2048Mi"
           limits:
-            cpu: "700m"
+            cpu: "500m"
             memory: "2048Mi"
         
         readinessProbe:
           httpGet:
-            #path: /tools.descartes.teastore.image/rest/image/finished
+            path: /tools.descartes.teastore.image/rest/image/finished
             port: 8080
-          initialDelaySeconds: 0
-          timeoutSeconds: 10
-          failureThreshold: 900
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /tools.descartes.teastore.image/rest/image/finished
+            port: 8080
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        startupProbe:
+          httpGet:
+            path: /tools.descartes.teastore.image/rest/image/finished
+            port: 8080
+          timeoutSeconds: 3
+          failureThreshold: 300
           periodSeconds: 1
-#         livenessProbe:
-#           httpGet:
-#             port: 8080
-#           initialDelaySeconds: 120
-#           timeoutSeconds: 30
-#           failureThreshold: 3
-#           periodSeconds: 5
-#         startupProbe:
-#           httpGet:
-#             port: 8080
-#           failureThreshold: 300
-#           periodSeconds: 1
 ---
 apiVersion: v1
 kind: Service
@@ -351,32 +352,33 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "800m"
+            cpu: "500m"
             memory: "2048Mi"
           limits:
-            cpu: "800m"
+            cpu: "500m"
             memory: "2048Mi"
         
         readinessProbe:
           httpGet:
             path: /tools.descartes.teastore.recommender/rest/train/isready
             port: 8080
-          initialDelaySeconds: 0
-          timeoutSeconds: 10
-          failureThreshold: 900
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /tools.descartes.teastore.recommender/rest/train/isready
+            port: 8080
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        startupProbe:
+          httpGet:
+            path: /tools.descartes.teastore.recommender/rest/train/isready
+            port: 8080
+          timeoutSeconds: 3
+          failureThreshold: 300
           periodSeconds: 1
-#         livenessProbe:
-#           httpGet:
-#             port: 8080
-#           initialDelaySeconds: 120
-#           timeoutSeconds: 30
-#           failureThreshold: 3
-#           periodSeconds: 5
-#         startupProbe:
-#           httpGet:
-#             port: 8080
-#           failureThreshold: 300
-#           periodSeconds: 1
 ---
 apiVersion: v1
 kind: Service
@@ -428,31 +430,33 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "800m"
+            cpu: "1000m"
             memory: "2048Mi"
           limits:
-            cpu: "800m"
+            cpu: "1000m"
             memory: "2048Mi"
         
         readinessProbe:
           httpGet:
             port: 8080
-          initialDelaySeconds: 0
-          timeoutSeconds: 10
-          failureThreshold: 900
+            path: /tools.descartes.teastore.webui/
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /tools.descartes.teastore.webui/
+            port: 8080
+          timeoutSeconds: 30
+          failureThreshold: 3
+          periodSeconds: 10
+        startupProbe:
+          httpGet:
+            path: /tools.descartes.teastore.webui/
+            port: 8080
+          timeoutSeconds: 3
+          failureThreshold: 300
           periodSeconds: 1
-#         livenessProbe:
-#           httpGet:
-#             port: 8080
-#           initialDelaySeconds: 120
-#           timeoutSeconds: 30
-#           failureThreshold: 3
-#           periodSeconds: 5
-#         startupProbe:
-#           httpGet:
-#             port: 8080
-#           failureThreshold: 300
-#           periodSeconds: 1
 ---
 apiVersion: v1
 kind: Service
