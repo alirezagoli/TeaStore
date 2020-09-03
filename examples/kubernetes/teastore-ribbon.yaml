@@ -190,10 +190,10 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "500m"
+            cpu: "750m"
             memory: "2048Mi"
           limits:
-            cpu: "500m"
+            cpu: "750m"
             memory: "2048Mi"
             
         readinessProbe:
@@ -252,10 +252,10 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "500m"
+            cpu: "1000m"
             memory: "2048Mi"
           limits:
-            cpu: "500m"
+            cpu: "1000m"
             memory: "2048Mi"
         
         readinessProbe:
@@ -317,10 +317,10 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "500m"
+            cpu: "750m"
             memory: "2048Mi"
           limits:
-            cpu: "500m"
+            cpu: "750m"
             memory: "2048Mi"
         
         readinessProbe:
