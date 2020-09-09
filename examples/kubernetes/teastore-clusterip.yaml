@@ -430,10 +430,10 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "1800m"
+            cpu: "1850m"
             memory: "512Mi"
           limits:
-            cpu: "1800m"
+            cpu: "1850m"
             memory: "512Mi"
         
         readinessProbe:
