@@ -121,10 +121,10 @@ spec:
           value: "3306"
         resources:
           requests:
-            cpu: "900m"
+            cpu: "850m"
             memory: "512Mi"
           limits:
-            cpu: "900m"
+            cpu: "850m"
             memory: "512Mi"
         
         readinessProbe:
