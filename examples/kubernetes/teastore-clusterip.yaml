@@ -121,10 +121,10 @@ spec:
           value: "3306"
         resources:
           requests:
-            cpu: "850m"
+            cpu: "800m"
             memory: "512Mi"
           limits:
-            cpu: "850m"
+            cpu: "800m"
             memory: "512Mi"
         
         readinessProbe:
@@ -199,10 +199,10 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "900m"
+            cpu: "800m"
             memory: "512Mi"
           limits:
-            cpu: "900m"
+            cpu: "800m"
             memory: "512Mi"
             
         readinessProbe:
@@ -352,10 +352,10 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "1000m"
+            cpu: "800m"
             memory: "512Mi"
           limits:
-            cpu: "1000m"
+            cpu: "800m"
             memory: "512Mi"
         
         readinessProbe:
@@ -430,10 +430,10 @@ spec:
           value: "teastore-registry"
         resources:
           requests:
-            cpu: "1200m"
+            cpu: "1000m"
             memory: "512Mi"
           limits:
-            cpu: "1200m"
+            cpu: "1000m"
             memory: "512Mi"
         
         readinessProbe:
