@@ -25,38 +25,38 @@
     <hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="2091715895">
+          <collectionProp name="2090896162">
             <stringProp name="50">2</stringProp>
             <stringProp name="48">0</stringProp>
-            <stringProp name="50">2</stringProp>
+            <stringProp name="48">0</stringProp>
             <stringProp name="1512228">1500</stringProp>
             <stringProp name="48">0</stringProp>
           </collectionProp>
-          <collectionProp name="1964040258">
+          <collectionProp name="1963220525">
             <stringProp name="52">4</stringProp>
             <stringProp name="50547">300</stringProp>
-            <stringProp name="50">2</stringProp>
+            <stringProp name="48">0</stringProp>
             <stringProp name="1509345">1200</stringProp>
             <stringProp name="48">0</stringProp>
           </collectionProp>
-          <collectionProp name="1979014552">
+          <collectionProp name="1978194819">
             <stringProp name="52">4</stringProp>
             <stringProp name="53430">600</stringProp>
-            <stringProp name="50">2</stringProp>
+            <stringProp name="48">0</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="48">0</stringProp>
           </collectionProp>
-          <collectionProp name="532726386">
+          <collectionProp name="531906653">
             <stringProp name="51">3</stringProp>
             <stringProp name="56313">900</stringProp>
-            <stringProp name="50">2</stringProp>
+            <stringProp name="48">0</stringProp>
             <stringProp name="53430">600</stringProp>
             <stringProp name="48">0</stringProp>
           </collectionProp>
-          <collectionProp name="-491807384">
+          <collectionProp name="-492627117">
             <stringProp name="53">5</stringProp>
             <stringProp name="1509345">1200</stringProp>
-            <stringProp name="50">2</stringProp>
+            <stringProp name="48">0</stringProp>
             <stringProp name="50547">300</stringProp>
             <stringProp name="48">0</stringProp>
           </collectionProp>
