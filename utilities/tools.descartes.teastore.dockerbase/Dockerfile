@@ -17,10 +17,13 @@ COPY target/jars/dockermemoryconfigurator* /usr/local/tomcat/bin/dockermemorycon
 RUN rm /usr/local/tomcat/conf/server.xml
 COPY server.xml /usr/local/tomcat/conf/
 
+#RUN   echo "org.apache.jasper.compiler.TldLocationsCache.level = FINE" >> /usr/local/tomcat/conf/logging.properties
+#RUN   echo "org.apache.jasper.servlet.TldScanner.level = FINE" >> /usr/local/tomcat/conf/logging.properties
+
 # Copy script to replace placeholders in context.xml with the environment variables
 COPY start.sh /usr/local/tomcat/bin/start.sh
 RUN chmod +x /usr/local/tomcat/bin/start.sh
-
+COPY dd-java-agent.jar /usr/local/tomcat/
 # Service configuration. SERVICE_PORT is the host port, mapped to the exposed docker port. HOST_NAME
 # is the IP address or hostname of the host running the docker container
 ENV SERVICE_PORT 8080
@@ -42,11 +45,11 @@ ENV RABBITMQ_HOST unset
 # Environment variable no longer needed. Replaced by sed in start.sh
 # ENV JAVA_OPTS $JAVA_OPTS -Dsecurerandom.source=file 837:/dev/urandom
 
-RUN mkdir -p /kieker/logs
+#RUN mkdir -p /kieker/logs
 
-COPY kieker.monitoring.properties 							/kieker/config/kieker.monitoring.properties
-COPY aop.xml 												/usr/local/tomcat/lib/aop.xml
-COPY kieker-1.14-SNAPSHOT-aspectj.jar 						/kieker/agent/agent.jar
+#COPY kieker.monitoring.properties 							/kieker/config/kieker.monitoring.properties
+#COPY aop.xml 												/usr/local/tomcat/lib/aop.xml
+#COPY kieker-1.14-SNAPSHOT-aspectj.jar 						/kieker/agent/agent.jar
 
 EXPOSE 8080
 

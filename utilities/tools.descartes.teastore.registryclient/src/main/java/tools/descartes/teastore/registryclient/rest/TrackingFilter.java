@@ -1,7 +1,7 @@
 package tools.descartes.teastore.registryclient.rest;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -10,16 +10,16 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.http.HttpServletResponse;
 
 import io.opentracing.Scope;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import kieker.common.record.controlflow.OperationExecutionRecord;
-import kieker.monitoring.core.controller.IMonitoringController;
-import kieker.monitoring.core.controller.MonitoringController;
-import kieker.monitoring.core.registry.ControlFlowRegistry;
-import kieker.monitoring.core.registry.SessionRegistry;
+//import kieker.common.record.controlflow.OperationExecutionRecord;
+//import kieker.monitoring.core.controller.IMonitoringController;
+//import kieker.monitoring.core.controller.MonitoringController;
+//import kieker.monitoring.core.registry.ControlFlowRegistry;
+//import kieker.monitoring.core.registry.SessionRegistry;
 import tools.descartes.teastore.registryclient.tracing.Tracing;
 
 /**
@@ -32,10 +32,10 @@ public class TrackingFilter implements Filter {
 
   private static final Logger LOG = LoggerFactory.getLogger(TrackingFilter.class);
 
-  private static final IMonitoringController CTRLINST = MonitoringController.getInstance();
+  //private static final IMonitoringController CTRLINST = MonitoringController.getInstance();
   private static final String SESSION_ID_ASYNC_TRACE = "NOSESSION-ASYNCIN";
-  private static final ControlFlowRegistry CF_REGISTRY = ControlFlowRegistry.INSTANCE;
-  private static final SessionRegistry SESSION_REGISTRY = SessionRegistry.INSTANCE;
+  //private static final ControlFlowRegistry CF_REGISTRY = ControlFlowRegistry.INSTANCE;
+  //private static final SessionRegistry SESSION_REGISTRY = SessionRegistry.INSTANCE;
   private static final String HEADER_FIELD = "KiekerTracingInfo";
 
   /**
@@ -60,10 +60,11 @@ public class TrackingFilter implements Filter {
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
       throws IOException, ServletException {
     try (Scope scope = Tracing.extractCurrentSpan((HttpServletRequest) request)) {
-      if (!CTRLINST.isMonitoringEnabled()) {
+      if (true) {
         chain.doFilter(request, response);
         return;
       }
+  /*
       if (request instanceof HttpServletRequest && response instanceof HttpServletResponse) {
         String url = ((HttpServletRequest) request).getRequestURL().toString();
         if (url.contains("webui")) {
@@ -151,16 +152,17 @@ public class TrackingFilter implements Filter {
       int eoi = CF_REGISTRY.recallThreadLocalEOI();
       wrappedResponse.addHeader(HEADER_FIELD,
           traceId + "," + sessionId + "," + (eoi) + "," + Integer.toString(CF_REGISTRY.recallThreadLocalESS()));
-      out.write(wrappedResponse.toString());
+      out.write(wrappedResponse.toString()); */
     }
+
   }
 
   /**
    * Teardown method.
    */
-  public void destroy() {
+  public void destroy() { /*
     CF_REGISTRY.unsetThreadLocalTraceId();
     CF_REGISTRY.unsetThreadLocalEOI();
-    CF_REGISTRY.unsetThreadLocalESS();
+    CF_REGISTRY.unsetThreadLocalESS();*/
   }
 }

@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<properties>
-		<teastoreversion>1.3.4</teastoreversion>
+		<teastoreversion>1.3.8</teastoreversion>
 	</properties>
 
 	<prerequisites>
@@ -17,8 +17,10 @@
 	
 	<modules>
 		<module>interfaces/tools.descartes.teastore.entities</module>
+                <!--
 		<module>./utilities/tools.descartes.teastore.kieker.probes</module>
 		<module>./utilities/tools.descartes.teastore.kieker.rabbitmq</module>
+                -->
 		<module>utilities/tools.descartes.teastore.registryclient</module>
 		<module>utilities/tools.descartes.teastore.dockermemoryconfigurator</module>
 		<module>./utilities/tools.descartes.teastore.dockerbase</module>

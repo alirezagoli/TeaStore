@@ -30,6 +30,7 @@
 			<version>1.7.25</version>
 		</dependency>
 	</dependencies>
+        <!--
 	<build>
 		<finalName>tools.descartes.teastore.entities</finalName>
 		<plugins>
@@ -58,6 +59,7 @@
 			</plugin>
 		</plugins>
 	</build>
+        -->
 	<parent>
 		<groupId>tools.descartes.teastore</groupId>
 		<artifactId>parent</artifactId>

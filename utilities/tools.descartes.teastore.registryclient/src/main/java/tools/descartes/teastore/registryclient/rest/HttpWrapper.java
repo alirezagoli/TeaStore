@@ -5,10 +5,10 @@ import javax.ws.rs.core.MediaType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import kieker.monitoring.core.controller.IMonitoringController;
-import kieker.monitoring.core.controller.MonitoringController;
-import kieker.monitoring.core.registry.ControlFlowRegistry;
-import kieker.monitoring.core.registry.SessionRegistry;
+//import kieker.monitoring.core.controller.IMonitoringController;
+//import kieker.monitoring.core.controller.MonitoringController;
+//import kieker.monitoring.core.registry.ControlFlowRegistry;
+//import kieker.monitoring.core.registry.SessionRegistry;
 import tools.descartes.teastore.registryclient.tracing.Tracing;
 
 import javax.ws.rs.client.WebTarget;
@@ -20,10 +20,10 @@ import javax.ws.rs.client.WebTarget;
  *
  */
 public final class HttpWrapper {
-  private static final IMonitoringController CTRLINST = MonitoringController.getInstance();
+  //private static final IMonitoringController CTRLINST = MonitoringController.getInstance();
   private static final Logger LOG = LoggerFactory.getLogger(HttpWrapper.class);
-  private static final ControlFlowRegistry CF_REGISTRY = ControlFlowRegistry.INSTANCE;
-  private static final SessionRegistry SESSION_REGISTRY = SessionRegistry.INSTANCE;
+  //private static final ControlFlowRegistry CF_REGISTRY = ControlFlowRegistry.INSTANCE;
+  //private static final SessionRegistry SESSION_REGISTRY = SessionRegistry.INSTANCE;
   private static final String HEADER_FIELD = "KiekerTracingInfo";
 
   /**
@@ -42,7 +42,7 @@ public final class HttpWrapper {
   public static Builder wrap(WebTarget target) {
     Builder builder = target.request(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
     Tracing.inject(builder);
-    if (CTRLINST.isMonitoringEnabled()) {
+    /*if (CTRLINST.isMonitoringEnabled()) {
       final String sessionId = SESSION_REGISTRY.recallThreadLocalSessionId();
       final int eoi; // this is executionOrderIndex-th execution in this trace
       final int ess; // this is the height in the dynamic call tree of this execution
@@ -69,7 +69,7 @@ public final class HttpWrapper {
       // Get request header
       return builder.header(HEADER_FIELD,
           Long.toString(traceId) + "," + sessionId + "," + Integer.toString(eoi) + "," + Integer.toString(nextESS));
-    }
+    }*/
     return builder;
   }
 }

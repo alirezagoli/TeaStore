@@ -4,11 +4,11 @@ import javax.ws.rs.core.Response;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import kieker.common.record.controlflow.OperationExecutionRecord;
-import kieker.monitoring.core.controller.IMonitoringController;
-import kieker.monitoring.core.controller.MonitoringController;
-import kieker.monitoring.core.registry.ControlFlowRegistry;
-import kieker.monitoring.core.registry.SessionRegistry;
+//import kieker.common.record.controlflow.OperationExecutionRecord;
+//import kieker.monitoring.core.controller.IMonitoringController;
+//import kieker.monitoring.core.controller.MonitoringController;
+//import kieker.monitoring.core.registry.ControlFlowRegistry;
+//import kieker.monitoring.core.registry.SessionRegistry;
 
 /**
  * Wrapper for http responses.
@@ -18,9 +18,9 @@ import kieker.monitoring.core.registry.SessionRegistry;
  */
 public final class ResponseWrapper {
 
-  private static final IMonitoringController CTRLINST = MonitoringController.getInstance();
-  private static final ControlFlowRegistry CF_REGISTRY = ControlFlowRegistry.INSTANCE;
-  private static final SessionRegistry SESSION_REGISTRY = SessionRegistry.INSTANCE;
+  //private static final IMonitoringController CTRLINST = MonitoringController.getInstance();
+  //private static final ControlFlowRegistry CF_REGISTRY = ControlFlowRegistry.INSTANCE;
+  //private static final SessionRegistry SESSION_REGISTRY = SessionRegistry.INSTANCE;
   private static final String HEADER_FIELD = "KiekerTracingInfo";
   private static final Logger LOG = LoggerFactory.getLogger(ResponseWrapper.class);
   private static final String SESSION_ID_ASYNC_TRACE = "NOSESSION-ASYNCIN";
@@ -40,7 +40,7 @@ public final class ResponseWrapper {
    * @return response response
    */
   public static Response wrap(Response response) {
-    if (CTRLINST.isMonitoringEnabled()) {
+    /*if (CTRLINST.isMonitoringEnabled()) {
       long traceId = -1L;
       int eoi;
       int ess;
@@ -99,7 +99,7 @@ public final class ResponseWrapper {
         CF_REGISTRY.storeThreadLocalESS(ess); // this execution has ESS=ess
         SESSION_REGISTRY.storeThreadLocalSessionId(sessionId);
       }
-    }
+    }*/
     return response;
   }
 

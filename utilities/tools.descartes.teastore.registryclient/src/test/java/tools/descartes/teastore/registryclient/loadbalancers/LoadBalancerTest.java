@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.IntStream;
-import javax.servlet.ServletException;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
@@ -27,7 +26,7 @@ import org.junit.Test;
 
 import com.netflix.loadbalancer.Server;
 
-import kieker.monitoring.core.controller.MonitoringController;
+//import kieker.monitoring.core.controller.MonitoringController;
 
 import org.junit.Assert;
 
@@ -64,27 +63,23 @@ public class LoadBalancerTest {
 		testTomcat.setPort(0);
 		testTomcat.setBaseDir(testWorkingDir);
 		Context context;
-		try {
-			context = testTomcat.addWebapp(CONTEXT, testWorkingDir);
-			testTomcat.getEngine().setName("Catalina" + i);
-			TestServlet testServlet = new TestServlet();
-			testServlet.setId(i);
-			testTomcat.addServlet(CONTEXT, "notFoundServlet", new NotFoundServlet());
-			testTomcat.addServlet(CONTEXT, "timeoutStatusServlet", new TimeoutStatusServlet());
-			testTomcat.addServlet(CONTEXT, "timeoutingServlet", new SlowTimeoutingServlet());
-			testTomcat.addServlet(CONTEXT, "restServlet", testServlet);
-			context.addServletMappingDecoded("/rest/" + ENDPOINT, "restServlet");
-			context.addServletMappingDecoded("/rest/" + ENDPOINT + "/*", "restServlet");
-			context.addServletMappingDecoded("/rest/" + NOT_FOUND_ENDPOINT, "notFoundServlet");
-			context.addServletMappingDecoded("/rest/" + NOT_FOUND_ENDPOINT + "/*", "notFoundServlet");
-			context.addServletMappingDecoded("/rest/" + TIMEOUT_STATUS_ENDPOINT, "timeoutStatusServlet");
-			context.addServletMappingDecoded("/rest/" + TIMEOUT_STATUS_ENDPOINT + "/*", "timeoutStatusServlet");
-			context.addServletMappingDecoded("/rest/" + TIMEOUTING_ENDPOINT, "timeoutStatusServlet");
-			context.addServletMappingDecoded("/rest/" + TIMEOUTING_ENDPOINT + "/*", "timeoutStatusServlet");
-			testTomcats.add(testTomcat);
-		} catch (ServletException e) {
-			e.printStackTrace();
-		}
+		context = testTomcat.addWebapp(CONTEXT, testWorkingDir);
+		testTomcat.getEngine().setName("Catalina" + i);
+		TestServlet testServlet = new TestServlet();
+		testServlet.setId(i);
+		testTomcat.addServlet(CONTEXT, "notFoundServlet", new NotFoundServlet());
+		testTomcat.addServlet(CONTEXT, "timeoutStatusServlet", new TimeoutStatusServlet());
+		testTomcat.addServlet(CONTEXT, "timeoutingServlet", new SlowTimeoutingServlet());
+		testTomcat.addServlet(CONTEXT, "restServlet", testServlet);
+		context.addServletMappingDecoded("/rest/" + ENDPOINT, "restServlet");
+		context.addServletMappingDecoded("/rest/" + ENDPOINT + "/*", "restServlet");
+		context.addServletMappingDecoded("/rest/" + NOT_FOUND_ENDPOINT, "notFoundServlet");
+		context.addServletMappingDecoded("/rest/" + NOT_FOUND_ENDPOINT + "/*", "notFoundServlet");
+		context.addServletMappingDecoded("/rest/" + TIMEOUT_STATUS_ENDPOINT, "timeoutStatusServlet");
+		context.addServletMappingDecoded("/rest/" + TIMEOUT_STATUS_ENDPOINT + "/*", "timeoutStatusServlet");
+		context.addServletMappingDecoded("/rest/" + TIMEOUTING_ENDPOINT, "timeoutStatusServlet");
+		context.addServletMappingDecoded("/rest/" + TIMEOUTING_ENDPOINT + "/*", "timeoutStatusServlet");
+		testTomcats.add(testTomcat);
 	}
 	
 	/**
@@ -95,7 +90,7 @@ public class LoadBalancerTest {
 	public void setup() throws Throwable {
 		testTomcats = new ArrayList<>(NUM_SERVERS + 1);
 		IntStream.range(0, NUM_SERVERS).forEach(i -> setupAndAddTestTomcat(i));
-		MonitoringController.getInstance().disableMonitoring();		
+		//MonitoringController.getInstance().disableMonitoring();		
 	}
 	
 	/**

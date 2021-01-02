@@ -19,18 +19,19 @@
 			<artifactId>registryclient</artifactId>
 			<version>${teastoreversion}</version>
 		</dependency>
+                <!--
 		<dependency>
 			<groupId>tools.descartes.teastore</groupId>
 			<artifactId>kieker.probes</artifactId>
 			<version>${teastoreversion}</version>
 		</dependency>
-
+                -->
 		<!-- WebApp Dependencies -->
 		<!-- Test Dependencies -->
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-core</artifactId>
-			<version>8.5.20</version>
+			<version>8.5.55</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -86,11 +87,13 @@
 			<artifactId>sigar</artifactId>
 			<version>1.6.4</version>
 		</dependency>
+                <!--
 		<dependency>
 			<groupId>com.rabbitmq</groupId>
 			<artifactId>amqp-client</artifactId>
 			<version>5.0.0</version>
 		</dependency>
+               -->
 	</dependencies>
 
 	<build>
